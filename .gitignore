@@ -1,0 +1,13 @@
+# Generated files — recreate locally by running the scripts
+model.pkl
+dataset.npz
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Misc
+res.txt
+*.log
+.DS_Store
