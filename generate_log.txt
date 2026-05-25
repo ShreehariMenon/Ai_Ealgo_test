@@ -1,0 +1,26 @@
+/home/User/.local/lib/python3.10/site-packages/numpy/lib/_function_base_impl.py:3045: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[:, None]
+============================================================
+PQC Cipher Classifier  —  Dataset Generation
+============================================================
+  Algorithms      : 8
+  Samples/class   : 2000
+  Total samples   : 16000
+  Feature dim     : 335
+  Output          : ./dataset.npz
+
+  [1/8]  ML-KEM-512      — generating 2000 samples …
+/home/User/.local/lib/python3.10/site-packages/oqs/__init__.py:1: UserWarning: liboqs version (major, minor) 0.15.0 differs from liboqs-python version 0.14.1
+  from oqs.oqs import (
+  [2/8]  ML-KEM-768      — generating 2000 samples …
+  [3/8]  ML-KEM-1024     — generating 2000 samples …
+  [4/8]  AES-128-CBC     — generating 2000 samples …
+  [5/8]  AES-256-CBC     — generating 2000 samples …
+  [6/8]  AES-128-GCM     — generating 2000 samples …
+  [7/8]  AES-256-GCM     — generating 2000 samples …
+  [8/8]  AES-128-ECB     — generating 2000 samples …
+
+Dataset saved → ./dataset.npz
+  X shape : (16000, 335)
+  y shape : (16000,)
+  Classes : {'ML-KEM-512': 2000, 'ML-KEM-768': 2000, 'ML-KEM-1024': 2000, 'AES-128-CBC': 2000, 'AES-256-CBC': 2000, 'AES-128-GCM': 2000, 'AES-256-GCM': 2000, 'AES-128-ECB': 2000}

@@ -1,0 +1,75 @@
+/home/User/.local/lib/python3.10/site-packages/numpy/lib/_function_base_impl.py:3045: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[:, None]
+=================================================================
+PQC Cipher Classifier  —  Training
+=================================================================
+
+Dataset       : dataset.npz
+Total samples : 16000
+Feature dim   : 335
+Classes       : 8
+  [0] ML-KEM-512  (2000 samples)
+  [1] ML-KEM-768  (2000 samples)
+  [2] ML-KEM-1024  (2000 samples)
+  [3] AES-128-CBC  (2000 samples)
+  [4] AES-256-CBC  (2000 samples)
+  [5] AES-128-GCM  (2000 samples)
+  [6] AES-256-GCM  (2000 samples)
+  [7] AES-128-ECB  (2000 samples)
+
+Train: 12800   Test: 3200
+
+Training Random Forest (500 trees) …
+
+=================================================================
+TEST ACCURACY : 69.28%
+=================================================================
+
+              precision    recall  f1-score   support
+
+  ML-KEM-512      1.000     1.000     1.000       400
+  ML-KEM-768      1.000     1.000     1.000       400
+ ML-KEM-1024      1.000     1.000     1.000       400
+ AES-128-CBC      0.417     0.557     0.477       400
+ AES-256-CBC      0.391     0.477     0.430       400
+ AES-128-GCM      0.511     0.477     0.494       400
+ AES-256-GCM      0.507     0.485     0.496       400
+ AES-128-ECB      0.991     0.545     0.703       400
+
+    accuracy                          0.693      3200
+   macro avg      0.727     0.693     0.700      3200
+weighted avg      0.727     0.693     0.700      3200
+
+Confusion Matrix  (rows = true, columns = predicted):
+              ML-KEM-512  ML-KEM-768  ML-KEM-102  AES-128-CB  AES-256-CB  AES-128-GC  AES-256-GC  AES-128-EC
+  ML-KEM-512         400           0           0           0           0           0           0           0
+  ML-KEM-768           0         400           0           0           0           0           0           0
+ ML-KEM-1024           0           0         400           0           0           0           0           0
+ AES-128-CBC           0           0           0         223         176           0           0           1
+ AES-256-CBC           0           0           0         208         191           0           0           1
+ AES-128-GCM           0           0           0           8          12         191         189           0
+ AES-256-GCM           0           0           0          10          13         183         194           0
+ AES-128-ECB           0           0           0          86          96           0           0         218
+
+Top-15 most important features:
+   1.  bigram_entropy                       0.0431
+   2.  feat_291                             0.0405
+   3.  length                               0.0395
+   4.  entropy                              0.0362
+   5.  is_mlkem768_len                      0.0339
+   6.  feat_299                             0.0337
+   7.  is_mlkem512_len                      0.0287
+   8.  len_mod_16                           0.0284
+   9.  is_block16_aligned                   0.0252
+  10.  has_iv16_prefix                      0.0230
+  11.  is_mlkem1024_len                     0.0229
+  12.  len_mod_128                          0.0229
+  13.  is_pqc_length                        0.0212
+  14.  is_block8_aligned                    0.0206
+  15.  is_short_ct                          0.0199
+
+Running 5-fold cross-validation on full dataset …
+  CV accuracy: 68.58% ± 0.81%
+
+Model saved → model.pkl
+Training complete.

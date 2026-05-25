@@ -1,0 +1,113 @@
+/home/User/.local/lib/python3.10/site-packages/numpy/lib/_function_base_impl.py:3045: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[:, None]
+/home/User/.local/lib/python3.10/site-packages/oqs/__init__.py:1: UserWarning: liboqs version (major, minor) 0.15.0 differs from liboqs-python version 0.14.1
+  from oqs.oqs import (
+Model loaded  : /home/User/Ealgo_test/model.pkl
+Trained on    : 8 algorithms
+Test accuracy : 69.28%
+CV accuracy   : 68.58% ± 0.81%
+============================================================
+DEMO — encrypting with each algorithm, then predicting
+============================================================
+
+───────────────────────────────────────────────────────
+  Ciphertext length  : 768 bytes
+  True algorithm     : ML-KEM-512
+  Predicted          : ML-KEM-512  [✓  CORRECT]
+
+  Top-3 probabilities:
+    1. ML-KEM-512        99.40%  ███████████████████████████████ ←
+    2. ML-KEM-768         0.40%  
+    3. AES-128-CBC        0.20%  
+
+
+───────────────────────────────────────────────────────
+  Ciphertext length  : 1088 bytes
+  True algorithm     : ML-KEM-768
+  Predicted          : ML-KEM-768  [✓  CORRECT]
+
+  Top-3 probabilities:
+    1. ML-KEM-768        99.20%  ███████████████████████████████ ←
+    2. ML-KEM-512         0.60%  
+    3. ML-KEM-1024        0.20%  
+
+
+───────────────────────────────────────────────────────
+  Ciphertext length  : 1568 bytes
+  True algorithm     : ML-KEM-1024
+  Predicted          : ML-KEM-1024  [✓  CORRECT]
+
+  Top-3 probabilities:
+    1. ML-KEM-1024      100.00%  ████████████████████████████████ ←
+    2. ML-KEM-512         0.00%  
+    3. ML-KEM-768         0.00%  
+
+
+───────────────────────────────────────────────────────
+  Ciphertext length  : 160 bytes
+  True algorithm     : AES-128-CBC
+  Predicted          : AES-256-CBC  [✗  WRONG]
+
+  Top-3 probabilities:
+    1. AES-256-CBC       39.60%  ████████████ ←
+    2. AES-128-CBC       34.20%  ██████████
+    3. AES-128-ECB       20.60%  ██████
+
+
+───────────────────────────────────────────────────────
+  Ciphertext length  : 160 bytes
+  True algorithm     : AES-256-CBC
+  Predicted          : AES-128-CBC  [✗  WRONG]
+
+  Top-3 probabilities:
+    1. AES-128-CBC       42.80%  █████████████ ←
+    2. AES-256-CBC       37.80%  ████████████
+    3. AES-128-ECB       15.20%  ████
+
+
+───────────────────────────────────────────────────────
+  Ciphertext length  : 156 bytes
+  True algorithm     : AES-128-GCM
+  Predicted          : AES-256-GCM  [✗  WRONG]
+
+  Top-3 probabilities:
+    1. AES-256-GCM       52.40%  ████████████████ ←
+    2. AES-128-GCM       47.00%  ███████████████
+    3. AES-128-CBC        0.20%  
+
+
+───────────────────────────────────────────────────────
+  Ciphertext length  : 156 bytes
+  True algorithm     : AES-256-GCM
+  Predicted          : AES-128-GCM  [✗  WRONG]
+
+  Top-3 probabilities:
+    1. AES-128-GCM       49.60%  ███████████████ ←
+    2. AES-256-GCM       49.40%  ███████████████
+    3. AES-128-ECB        0.60%  
+
+
+───────────────────────────────────────────────────────
+  Ciphertext length  : 144 bytes
+  True algorithm     : AES-128-ECB
+  Predicted          : AES-128-CBC  [✗  WRONG]
+
+  Top-3 probabilities:
+    1. AES-128-CBC       40.20%  ████████████ ←
+    2. AES-256-CBC       34.80%  ███████████
+    3. AES-128-ECB       20.80%  ██████
+
+============================================================
+DEMO SUMMARY  —  3/8 correct  (38%)
+============================================================
+
+  Algorithm         Predicted           Conf   CT len  Result
+  ────────────────  ────────────────  ──────  ───────  ──────
+  ML-KEM-512        ML-KEM-512         99.4%      768  ✓
+  ML-KEM-768        ML-KEM-768         99.2%     1088  ✓
+  ML-KEM-1024       ML-KEM-1024       100.0%     1568  ✓
+  AES-128-CBC       AES-256-CBC        39.6%      160  ✗
+  AES-256-CBC       AES-128-CBC        42.8%      160  ✗
+  AES-128-GCM       AES-256-GCM        52.4%      156  ✗
+  AES-256-GCM       AES-128-GCM        49.6%      156  ✗
+  AES-128-ECB       AES-128-CBC        40.2%      144  ✗
